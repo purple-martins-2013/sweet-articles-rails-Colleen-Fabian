@@ -6,8 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = params[:id]
-    redirect_to category_articles_path(@category)
+    redirect_to category_articles_path(params[:id])
   end
 
 

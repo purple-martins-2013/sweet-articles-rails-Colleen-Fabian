@@ -47,3 +47,5 @@ group :test do
   gem 'faker'
   gem 'rspec'
 end
+
+gem 'friendly_id', '5.0.0.beta4'
