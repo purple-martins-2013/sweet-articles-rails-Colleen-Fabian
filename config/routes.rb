@@ -5,4 +5,7 @@ SweetArticlesRails::Application.routes.draw do
     resources :articles
   end
 
+  resources :tags do 
+    resources :articles
+  end
 end

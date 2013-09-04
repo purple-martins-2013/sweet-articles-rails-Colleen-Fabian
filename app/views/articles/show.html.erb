@@ -1,7 +1,12 @@
 <article>
   <h1><%= @article.category.name %></h1>
   <h3><%= @article.title %></h3>
-  <p><%= @article.tags.map{ |tag| tag.name}.join(", ") %></p>
+  <ul style="padding: 0">
+    <li style="display:inline">Tags:</li>
+  <% @article.tags.each do |tag|  %>
+    <li style="display:inline"> <%= link_to tag.name.capitalize, tag_articles_path(tag) %> </li>
+  <% end %>
+  </ul>
   <hr/>
   <p><%= @article.description %></p>
 </article>

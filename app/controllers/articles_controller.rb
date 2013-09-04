@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
 
   def index
-    @category = Category.find_by_name(params[:category_id])
+    unless (params[:category_id].nil?)
+      @category = Category.find_by_name(params[:category_id])
+    else
+      @tag = Tag.find_by_name(params[:tag_id])
+    end
   end
 
   def show
